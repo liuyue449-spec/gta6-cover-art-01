@@ -1,0 +1,149 @@
+@font-face {
+  font-family: 'Anton';
+  src: url('fonts/Anton-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* The hidden attribute must always win, even over display rules below. */
+[hidden] { display: none !important; }
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #0d0a12;
+  color: #f2ead9;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+.topbar { padding: 20px 28px 4px; }
+
+.topbar h1 {
+  margin: 0;
+  font-family: 'Anton', 'Arial Narrow', sans-serif;
+  font-size: 40px;
+  letter-spacing: 0.04em;
+  color: #ffb35c;
+}
+
+.topbar h1 span { color: #ff5c39; }
+
+.topbar p { margin: 6px 0 10px; color: #b9aed0; }
+
+.layout-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 350px;
+  gap: 20px;
+  padding: 10px 28px 28px;
+  align-items: start;
+}
+
+.stage canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #171221;
+  border: 1px solid #2c2142;
+  border-radius: 10px;
+  cursor: grab;
+}
+
+.stage canvas:active { cursor: grabbing; }
+
+.hint { color: #8f86a8; font-size: 13px; }
+
+.editor { display: grid; gap: 14px; }
+
+.group {
+  border: 1px solid #2c2142;
+  border-radius: 12px;
+  background: #171221;
+  padding: 12px 14px 14px;
+  margin: 0;
+}
+
+.group legend {
+  font-family: 'Anton', 'Arial Narrow', sans-serif;
+  letter-spacing: 0.08em;
+  color: #ffb35c;
+  padding: 0 6px;
+}
+
+.group label { display: block; margin: 8px 0; font-size: 14px; color: #cfc4e6; }
+
+.group input[type='text'],
+.group select {
+  width: 100%;
+  margin-top: 4px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #3a2c58;
+  background: #0d0a12;
+  color: #f2ead9;
+  font-size: 15px;
+}
+
+.upload {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  border: 1.5px dashed #ff7a1a;
+  border-radius: 10px;
+  color: #ffb35c;
+  cursor: pointer;
+  margin: 8px 0;
+}
+
+.thumbs { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+
+.thumb {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.thumb.on { border-color: #ff7a1a; }
+
+.seg { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.seg button,
+.rowline button {
+  padding: 7px 12px;
+  border-radius: 8px;
+  border: 1px solid #3a2c58;
+  background: #0d0a12;
+  color: #f2ead9;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.seg button.on { border-color: #ff7a1a; color: #ffb35c; }
+
+.rowline { font-size: 14px; color: #cfc4e6; }
+
+.slider input { width: 100%; accent-color: #ff7a1a; }
+
+.go {
+  width: 100%;
+  padding: 11px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ff7a1a, #ff2e88);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.fine { color: #8f86a8; font-size: 12.5px; margin: 8px 0 0; }
+
+/* The staged cover (?shot=cover) fitted inside the viewport. */
+#coverFull {
+  display: block;
+  margin: 0 auto;
+  max-width: 100vw;
+  max-height: 100vh;
+}
